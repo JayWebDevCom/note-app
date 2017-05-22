@@ -1,7 +1,14 @@
-<script src="note-model.js"></script>
 <script src="assert.js"></script>
+<script src="note-model.js"></script>
 <script src="noteTest.js"></script>
+<script src="note-list-model.js"></script>
+<script src="noteListTest.js"></script>
+
 
 <script>
   var note = new Note()
-  assert.isTrue(note.giveText() === '') </script>
+  assert.isTrue(note.giveText() === '')
+
+  var noteList = new NoteList()
+  assert.isTrue(noteList.giveAllNotes().length == 0)
+</script>

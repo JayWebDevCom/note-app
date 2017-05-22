@@ -1,6 +1,6 @@
 function noteDefualtsToEmpty(){
   var note = new Note()
-  assert.isTrue(note.text === '')
+  assert.isTrue(note.giveText() === '')
 }
 
 noteDefualtsToEmpty();
