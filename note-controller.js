@@ -14,13 +14,7 @@ NoteController.prototype.printNotes = function () {
 NoteController.prototype.adjustPage = function () {
   var app = document.getElementById("app")
   app.innerHTML = 'new content'
-
 }
 
 exports.NoteController = NoteController;
 })(this)
-
-noteList = new NoteList();
-noteController = new NoteController(noteList);
-
-noteController.printNotes()

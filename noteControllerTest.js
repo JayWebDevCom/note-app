@@ -11,7 +11,6 @@ function noteControllerPrintsNotes () {
   }
 
   var appHTML = document.getElementById('app').innerHTML
-
   assert.isTrue(appHTML == noteController.printNotes())
 }
 
