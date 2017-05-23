@@ -1,0 +1,22 @@
+{
+  "name": "notetakeapp",
+  "version": "1.0.0",
+  "description": "a note taking app",
+  "main": "assert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyper0009/note-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyper0009/note-app/issues"
+  },
+  "homepage": "https://github.com/hyper0009/note-app#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
