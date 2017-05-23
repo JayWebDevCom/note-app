@@ -14,7 +14,5 @@ function noteControllerPrintsNotes () {
   assert.isTrue(appHTML == noteController.printNotes())
 }
 
-
-
 noteControllerCanBeInstantiated()
 noteControllerPrintsNotes();
