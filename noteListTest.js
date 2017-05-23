@@ -1,14 +1,14 @@
-function giveAllNotesIsAnEmptyArray() {
+function noteListHasAnEmptyArray() {
   var noteList = new NoteList ()
   assert.isTrue(noteList.giveAllNotes().length == 0)
 }
 
 function newNoteSetsPropertyOfNote(){
   var noteList = new NoteList ()
-  var string  = 'an array is not an array'
+  var string  = 'this is note list testing'
   noteList.newNote(string)
-  assert.isTrue(noteList.allNotes[0].text === string)
+  assert.isTrue(noteList.giveAllNotes()[0].giveText() === string)
 }
 
-giveAllNotesIsAnEmptyArray();
+noteListHasAnEmptyArray();
 newNoteSetsPropertyOfNote();
