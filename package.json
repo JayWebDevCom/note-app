@@ -1,7 +1,7 @@
 {
-  "name": "notetakeapp",
+  "name": "note-taking-app",
   "version": "1.0.0",
-  "description": "a note taking app",
+  "description": "",
   "main": "assert.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
