@@ -1,21 +1,21 @@
 {
-  "name": "note-taking-app",
+  "name": "note-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "an object oriented note taking, collecting and viewing app",
   "main": "assert.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyper0009/note-app.git"
+    "url": "git+https://github.com/JayWebDevCom/note-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hyper0009/note-app/issues"
+    "url": "https://github.com/JayWebDevCom/note-app/issues"
   },
-  "homepage": "https://github.com/hyper0009/note-app#readme",
+  "homepage": "https://github.com/JayWebDevCom/note-app#readme",
   "dependencies": {
     "http-server": "^0.10.0"
   }
