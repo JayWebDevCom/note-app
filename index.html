@@ -12,10 +12,26 @@
   </head>
 
   <body>
+    <script>
+      var noteList = new NoteList()
+    </script>
+
 
     <div id="app">
-      Hello, My name is Bob, I'm actually a goat !
+      <p>Nothing yet...</p>
     </div>
+
+
+
     <script src="note-controller.js"></script>
+
+
+    <script>
+      var noteController = new NoteController(noteList);
+      noteController.printNotes()
+    </script>
+
+    <script src="noteControllerTest.js"></script>
+
   </body>
 </html>

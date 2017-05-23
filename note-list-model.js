@@ -3,7 +3,7 @@
 function NoteList () {
 
   this.allNotes = []
-  
+
   this.giveAllNotes = function () {
     return this.allNotes;
   };

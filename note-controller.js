@@ -1,13 +1,9 @@
-
-
 (function(exports){
 
-function NoteController (noteList = new NoteList()) {
+function NoteController (noteList) {
 
-  noteList = new NoteList()
+  noteList.newNote('this is the string of the note two');
 
-  noteList.newNote('this is the string of the note')
-    
   var noteView = new NoteView(noteList)
 
   this.printNotes = function () {
@@ -20,11 +16,5 @@ function NoteController (noteList = new NoteList()) {
 
 }
 
-
-
 exports.NoteController = NoteController;
 })(this)
-
-
-var noteController = new NoteController();
-noteController.printNotes()
