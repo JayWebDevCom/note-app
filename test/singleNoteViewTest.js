@@ -13,7 +13,4 @@ returnsTwentyCharactersStringOfHTML = function () {
   assert.isTrue(singleNoteView.returnHTML() == '<div>' + string + '</div>')
 }
 
-
-
-
 returnsStringOfHTML()

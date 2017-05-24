@@ -19,7 +19,37 @@
       <p>Nothing yet...</p>
     </div>
 
+    <textarea>Insert Note Here</textarea>
+    <br>
+    <button id="saveButton">Save Note</button>
+
+
+
     <script src="js/interface.js"></script>
     <script src="test/noteControllerTest.js"></script>
+
+    <script>
+      setUpHashChangeMethod();
+
+      function setUpHashChangeMethod() {
+        window.addEventListener("hashchange", showNoteUrl)
+      };
+
+      function showNoteUrl() {
+        adjustPage(getURL(window.location))
+      };
+
+      function getURL () {
+        return window.location.hash.split("#")[1];
+      }
+
+      function adjustPage(content) {
+        document.getElementById("app").innerHTML = content
+      }
+
+
+
+    </script>
+
   </body>
 </html>

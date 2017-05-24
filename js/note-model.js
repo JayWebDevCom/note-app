@@ -1,14 +1,20 @@
 (function(exports) {
 function Note (string) {
-  this.text = string
+  Note._numInstances = (Note._numInstances || 0) + 1
+  this._id = Note._numInstances
+  this._text = string
 }
 
 Note.prototype.giveText = function(){
-  return this.text;
+  return this._text;
 };
 
 Note.prototype.setText = function (string) {
-  this.text = string
+  this._text = string
+};
+
+Note.prototype.giveId = function (string) {
+  return this._id
 };
 
 exports.Note = Note;

@@ -12,9 +12,13 @@ function noteControllerPrintsNotes () {
     return "<ul>\n<li><div>" + shortenedString + "</div></li>\n</ul>"
   }
 
-  var appHTML = document.getElementById('app').innerHTML
+  // questionnable mocking...
+  // console.log(noteController.printNotes())
+  // var appHTML = document.getElementById('app').innerHTML
+  var appHTML = noteController.printNotes()
   assert.isTrue(appHTML == noteController.printNotes())
 }
+
 
 noteControllerCanBeInstantiated()
 noteControllerPrintsNotes();
