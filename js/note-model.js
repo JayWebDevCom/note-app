@@ -1,6 +1,6 @@
 (function(exports) {
-function Note(){
-  this.text = ''
+function Note (string) {
+  this.text = string
 }
 
 Note.prototype.giveText = function(){
@@ -12,4 +12,5 @@ Note.prototype.setText = function (string) {
 };
 
 exports.Note = Note;
+
 })(this);

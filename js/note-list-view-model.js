@@ -9,7 +9,7 @@ NoteListView.prototype.outputNotes = function () {
 
   this._theNoteList.giveAllNotes().forEach(function(note){
     returnString += "<li><div>"
-    returnString += note.giveText()
+    returnString += note.giveText().slice(0, 20)
     returnString += "</div></li>\n"
   })
 

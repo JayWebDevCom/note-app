@@ -7,7 +7,9 @@ function noteControllerPrintsNotes () {
   var noteController = new NoteController(noteList);
 
   noteController.printNotes = function() {
-    return "<ul>\n<li><div>this is the string of the note two</div></li>\n</ul>"
+    string = "this is the string of the note two"
+    shortenedString = string.slice(0,20)
+    return "<ul>\n<li><div>" + shortenedString + "</div></li>\n</ul>"
   }
 
   var appHTML = document.getElementById('app').innerHTML
