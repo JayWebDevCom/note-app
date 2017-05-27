@@ -1,4 +1,3 @@
-
 var noteList = new NoteList()
 noteList.createNote("This is the first note hardcoded")
 
