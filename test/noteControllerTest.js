@@ -5,7 +5,7 @@ function noteControllerCanBeInstantiated() {
   try {
     assert.isTypeOf()
   } catch(e) {
-    console.log(e)
+    console.log(e.message)
   }
 }
 
