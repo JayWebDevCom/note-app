@@ -1,28 +1,37 @@
-// var httpServer = require("http-server");
-// var path = require("path");
-// var pathToHtmlAndJsFiles = path.join(__dirname, "");
-// console.log('path is', pathToHtmlAndJsFiles)
-// var server = httpServer.createServer({ root: pathToHtmlAndJsFiles });
-// server.listen(3000);
-// var Note = require('../js/note-model')
-// var assert = require('../js/assert')
-//
-// var note = new Note.Note('af')
-//
-// console.log(note)
-
-function noteDefualtsToEmpty(){
-  string = 'This is the first note text...'
+function noteCanBeInstantiated () {
+  var string = "This is test note"
   var note = new Note(string)
-  assert.isTrue(note.giveText() === string)
+  var assert = new Assert(note, "Note Can be instantiated", Note)
+  try {
+    assert.isTypeOf()
+  } catch(e) {
+    console.log(e.message)
+  }
 }
 
-function noteTextCanBeSet(){
+function noteTakesAStringAndAssignsItToTextProperty(){
+  var string = "This is test note"
   var note = new Note(string)
-  string = 'This is the second note text...'
-  note.setText(string)
-  assert.isTrue(note.giveText() == string)
+  var assert = new Assert(note._text, "Note Assigns A String", string)
+  try {
+    assert.isEqual()
+  } catch(e) {
+    console.log(e.message)
+  }
 }
 
-noteDefualtsToEmpty();
-noteTextCanBeSet();
+function noteGetTextMethodReturnsNoteTextProperty() {
+  var string = "This is test note"
+  var note = new Note(string)
+  var assert = new Assert(note.getText(), "getText returns note text property", string)
+    try {
+      assert.isEqual()
+    } catch(e) {
+      console.log(e.message)
+    }
+
+}
+
+noteCanBeInstantiated();
+noteTakesAStringAndAssignsItToTextProperty();
+noteGetTextMethodReturnsNoteTextProperty()

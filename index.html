@@ -2,18 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="js/assert.js"></script>
     <script src="js/note-model.js"></script>
-    <script src="test/noteTest.js"></script>
-    <script src="js/note-list-model.js"></script>
-    <script src="test/noteListTest.js"></script>
+    <!-- 
     <script src="js/note-list-view-model.js"></script>
     <script src="test/noteListViewTest.js"></script>
     <script src="js/note-controller.js"></script>
     <script src="js/single-note-view-model.js"></script>
-    <script src="test/singleNoteViewTest.js"></script>
+    <script src="test/singleNoteViewTest.js"></script> -->
   </head>
   <body>
+    <a href="tests.html">Test Page</a>
 
     <div id="noteToShow">
       <p>Note will appear here</p>
@@ -30,14 +28,13 @@
       </ul>
     </div>
 
-    <textarea id="textArea" onfocus="this.value='';">Insert Note Here</textarea>
-    <br>
-    <button id="saveButton">Save Note</button>
+    <form id="noteForm">
+      <textarea id="textArea" onfocus="this.value='';">Insert Note Here</textarea>
+      <input type="submit" value="Save Note">
+    </form>
 
-
-
-    <script src="js/interface.js"></script>
-    <script src="test/noteControllerTest.js"></script>
+    <!-- <script src="js/interface.js"></script>
+    <script src="test/noteControllerTest.js"></script> -->
 
     <script>
       setUpHashChangeMethod();
@@ -56,15 +53,22 @@
         .match( /\d+/g );
       }
 
-      function adjustPage(number) {
-        number = parseInt(number)
-        var output = noteController.findNoteAndReturnHTML(number)
+      function adjustPage(noteId) {
+        noteId = parseInt(noteId)
+        var output = noteController.findNoteAndReturnHTMLEDcontent(noteId)
         noteController.adjustPage(output)
-        // noteController.findNoteAndReturnHTML()
-        // document.getElementById("app").innerHTML = content
-        //document.getElementById("noteToShow").innerHTML = output
       }
 
+    </script>
+
+    <script>
+    window
+    .addEventListener("submit", myAlert)
+
+    function myAlert(e) {
+      e.preventDefault()
+      console.log('form submitted', e.target.childNodes[1].value)
+    }
     </script>
 
   </body>

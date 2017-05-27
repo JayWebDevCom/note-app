@@ -7,5 +7,5 @@
     return '<div>' + this._note.giveText() + '</div>'
   };
 
-  exports. SingleNoteView = SingleNoteView
+  exports.SingleNoteView = SingleNoteView
 })(this)

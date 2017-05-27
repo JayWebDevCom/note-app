@@ -5,7 +5,7 @@ function Note (string) {
   this._text = string
 }
 
-Note.prototype.giveText = function(){
+Note.prototype.getText = function(){
   return this._text;
 };
 
@@ -13,7 +13,7 @@ Note.prototype.setText = function (string) {
   this._text = string
 };
 
-Note.prototype.giveId = function (string) {
+Note.prototype.getId = function () {
   return this._id
 };
 

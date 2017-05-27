@@ -1,30 +1,45 @@
-function noteListViewOutputNotesPrintsContentsOfNotes () {
-  theNoteList = new NoteList()
-  var noteListView = new NoteListView(theNoteList)
-  string1 = 'The quick brown fox'
-  string2 = 'Jumps over the lazy dog'
-  theNoteList.newNote(string1)
-  theNoteList.newNote(string2)
-  assert.isTrue(noteListView.outputNotes() == "<ul>\n<li><div>" + string1.slice(0, 20) + "</div></li>\n<li><div>" + string2.slice(0, 20) + "</div></li>\n</ul>")
-}
-
-noteListViewProcessesNotesWithLinks = function () {
-  theNoteList = new NoteList()
-  var noteListView = new NoteListView(theNoteList)
-  string1 = 'The quick brown fox'
-  string2 = 'Jumps over the lazy dog'
-  theNoteList.newNote(string1)
-  theNoteList.newNote(string2)
-  // console.log(noteListView.printNotesWithLinks())
-
-  noteListView.printNotesWithLinks = function () {
-    return 'abc'
+function noteListViewOutputNotesPrintsContentsOfASingleNoteInTheList () {
+  var string1 = "This is note one"
+  var noteList = new NoteList();
+  noteList.createNote(string1)
+  var noteListView = new NoteListView(noteList);
+  var returnString = "<ul><li><div>" + string1 + "</div></li></ul>"
+  var assert = new Assert(noteListView.returnHTML(), "notelistView returns HTML of single note in it's noteList", returnString)
+  try {
+    assert.isEqual()
+  } catch(e) {
+    console.log(e.message)
   }
-
-
-  assert.isTrue( noteListView.printNotesWithLinks() == 'abc' )
 }
 
+function noteListViewOutputNotesPrintsContentsOfManyNotesInTheList () {
+  var string1 = "This is note one"
+  var string2 = "This is note two"
+  var noteList = new NoteList();
+  noteList.createNote(string1)
+  noteList.createNote(string2)
+  var noteListView = new NoteListView(noteList);
+  var returnString = "<ul><li><div>" + string1 + "</div></li><li><div>" + string2 + "</div></li></ul>"
+  var assert = new Assert(noteListView.returnHTML(), "notelistView returns HTML of many note in it's it's noteList", returnString)
+  try {
+    assert.isEqual()
+  } catch(e) {
+    console.log(e.message)
+  }
+}
 
-noteListViewOutputNotesPrintsContentsOfNotes();
-noteListViewProcessesNotesWithLinks();
+function noteListViewOutputNotesPrintsContentsOfZeroNotesInTheList () {
+  var noteList = new NoteList();
+  var noteListView = new NoteListView(noteList);
+  var returnString = "<ul><li><div>" + "Note List Is Empty Of Notes" + "</div></li></ul>"
+  var assert = new Assert(noteListView.returnHTML(), "notelistView returns HTML of empty noteList", returnString)
+  try {
+    assert.isEqual()
+  } catch(e) {
+    console.log(e.message)
+  }
+}
+
+noteListViewOutputNotesPrintsContentsOfASingleNoteInTheList()
+noteListViewOutputNotesPrintsContentsOfManyNotesInTheList();
+noteListViewOutputNotesPrintsContentsOfZeroNotesInTheList()
