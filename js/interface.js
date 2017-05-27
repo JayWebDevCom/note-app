@@ -1,11 +1,9 @@
-// var noteList = new NoteList();
-// var noteListView = new NoteListView(noteList)
-// var noteController = new NoteController(noteList);
 
-// noteList.newNote('This is hardcoded note number 1')
-// noteList.newNote('This is hardcoded note number 2')
-// noteList.newNote('This is hardcoded note number 3')
+var noteList = new NoteList()
+noteList.createNote("This is the first note hardcoded")
 
-// noteController.printNotes()
+var noteListView = new NoteListView(noteList)
 
-// noteListView.printNotesWithLinks()
+var noteController = new NoteController(noteList);
+
+noteController.getsHTMLAndInsertsHTML()
