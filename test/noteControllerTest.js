@@ -4,6 +4,7 @@ function noteControllerCanBeInstantiated() {
   var assert = new Assert(noteController, "noteController can be instantiated", NoteController)
   try {
     assert.isTypeOf()
+    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }
@@ -22,6 +23,7 @@ function noteControllerUpdatesThePageThroughgetsHTMLAndInsertsHTML() {
   var assert = new Assert(fakeNotesElement.innerHTML, "noteController updates the page with HTML content", returnString)
   try {
     assert.isEqual()
+    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }
@@ -41,6 +43,7 @@ function noteControllerAdjustsPageContentWithGivenContent(){
   var assert = new Assert(returnString, "noteController updates the page with HTML content after reveiving an id", fakeNoteElement.innerHTML)
   try {
     assert.isEqual()
+    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }

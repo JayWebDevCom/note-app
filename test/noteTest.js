@@ -15,6 +15,7 @@ function noteTakesAStringAndAssignsItToTextProperty(){
   var assert = new Assert(note._text, "Note Assigns A String", string)
   try {
     assert.isEqual()
+    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }
@@ -26,6 +27,7 @@ function noteGetTextMethodReturnsNoteTextProperty() {
   var assert = new Assert(note.getText(), "getText returns note text property", string)
     try {
       assert.isEqual()
+      updateSection(assert)
     } catch(e) {
       updateErrorSection(e)
     }
@@ -37,6 +39,7 @@ function noteHasAnId() {
   var assert = new Assert(note._id, "note has an integer id", "number")
     try {
       assert.isTypeOf2()
+      updateSection(assert)
     } catch(e) {
       updateErrorSection(e)
     }
@@ -49,6 +52,7 @@ function noteIdIncreasesBy1() {
   var assert = new Assert(note2._id - note1._id, "note id increases by 1", 1)
     try {
       assert.isEqual()
+      updateSection(assert)
     } catch(e) {
       updateErrorSection(e)
     }
@@ -60,6 +64,7 @@ function getIdReturnsNoteId () {
   var assert = new Assert(note.getId(), "getId returns id", note._id)
     try {
       assert.isEqual()
+      updateSection(assert)
     } catch(e) {
       updateErrorSection(e)
     }

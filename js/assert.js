@@ -6,6 +6,14 @@ function updateErrorSection (e) {
   document.getElementById("testOutput").appendChild(newli)
 }
 
+function updateSection(assert) {
+  var output = "Passed - " + assert._testName
+  var newli = document.createElement("li");
+  var text = document.createTextNode(output);
+  newli.appendChild(text);
+  document.getElementById("testOutput").appendChild(newli)
+}
+
 function Assert(subject, testName, expectation) {
   this._subject = subject;
   this._testName = testName;
