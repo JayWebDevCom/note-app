@@ -4,7 +4,7 @@ function noteListHasAnArray() {
   try {
     assert.isTypeOf()
   } catch (e) {
-    console.log(e.message)
+    updateErrorSection(e)
   }
 }
 
@@ -14,7 +14,7 @@ function getArrayReturnsItsArray() {
   try {
     assert.isEqual()
   } catch (e) {
-    console.log(e.message)
+    updateErrorSection(e)
   }
 }
 
@@ -26,7 +26,7 @@ function createNoteCreatesAndStoresANote() {
   try {
     assert.isTypeOf()
   } catch (e) {
-    console.log(e.message)
+    updateErrorSection(e)
   }
 }
 
@@ -38,7 +38,7 @@ function NoteCreatedHasTheStringGiven () {
   try {
     assert.isEqual()
   } catch (e) {
-    console.log(e.message)
+    updateErrorSection(e)
   }
 }
 

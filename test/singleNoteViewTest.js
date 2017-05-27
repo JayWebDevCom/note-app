@@ -4,7 +4,7 @@ function canBeInstantiated () {
   try {
     assert.isTypeOf()
   } catch(e) {
-    console.log(e.message)
+    updateErrorSection(e)
   }
 }
 
@@ -17,7 +17,7 @@ function returnsHTMLOfItsNote () {
   try {
     assert.isEqual()
   } catch(e) {
-    console.log(e.message)
+    updateErrorSection(e)
   }
 }
 

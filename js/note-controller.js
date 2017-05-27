@@ -1,44 +1,28 @@
 (function(exports){
 
-function NoteController (noteList, NoteListViewConstructor = NoteListView, pageElement = document.getElementById("app")) {
-  noteList.createNote("Fave drink seltzer")
-  this._pageElement = pageElement
+function NoteController (noteList, NoteListViewConstructor = NoteListView,
+  notesElement = document.getElementById("app"), noteElement = document.getElementById("showNotes")) {
+  this._noteList = noteList
+  this._noteElement = noteElement
+  this._notesElement = notesElement
   this._noteListView = new NoteListViewConstructor(noteList)
-
 }
 
 NoteController.prototype.getsHTMLAndInsertsHTML = function () {
-  var content = this._noteListView.returnHTML()
-  this._pageElement.innerHTML = content
-
+  this._notesElement.innerHTML = this._noteListView.returnLinkedHTML()
 }
 
-//
-// NoteController.prototype.printNotes = function () {
-//   var stringToReturn = this._noteListView.outputNotes()
-//   this._appElement.innerHTML = stringToReturn
-// }
-//
-// NoteController.prototype.adjustPage = function (formattedNote) {
-//   var app = document.getElementById("noteToShow")
-//   app.innerHTML = formattedNote
-// }
-//
-// NoteController.prototype.findNoteAndReturnHTMLEDcontent = function (noteId) {
-//     var noteToReturn
-//     this._noteList.giveAllNotes()
-//     .forEach(function(note){
-//     if (note.giveId() == noteId){
-//       noteToReturn = note
-//     }
-//   })
-//     var singleNoteView = new singleNoteView(noteToReturn)
-//     return singleNoteView.returnHTML()
-// };
-//
-// NoteController.prototype.createNote = function (noteText) {
-//
-// }
+NoteController.prototype.findNoteAndUpdatePageWithHTMLEDcontent = function (noteId) {
+    var noteToReturn
+    this._noteList.getAllNotes()
+    .forEach(function(note){
+    if (note.getId() == noteId){
+      noteToReturn = note
+    }
+  })
+    this._noteElement.innerHTML = new SingleNoteView(noteToReturn).returnHTML()
+};
 
 exports.NoteController = NoteController;
+
 })(this)

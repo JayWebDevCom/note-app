@@ -5,7 +5,7 @@ function noteCanBeInstantiated () {
   try {
     assert.isTypeOf()
   } catch(e) {
-    console.log(e.message)
+    updateErrorSection(e)
   }
 }
 
@@ -16,7 +16,7 @@ function noteTakesAStringAndAssignsItToTextProperty(){
   try {
     assert.isEqual()
   } catch(e) {
-    console.log(e.message)
+    updateErrorSection(e)
   }
 }
 
@@ -27,11 +27,47 @@ function noteGetTextMethodReturnsNoteTextProperty() {
     try {
       assert.isEqual()
     } catch(e) {
-      console.log(e.message)
+      updateErrorSection(e)
     }
+}
 
+function noteHasAnId() {
+  var string = "This is test note"
+  var note = new Note(string)
+  var assert = new Assert(note._id, "note has an integer id", "number")
+    try {
+      assert.isTypeOf2()
+    } catch(e) {
+      updateErrorSection(e)
+    }
+}
+
+function noteIdIncreasesBy1() {
+  var string = "This is test note"
+  var note1 = new Note(string)
+  var note2 = new Note(string)
+  var assert = new Assert(note2._id - note1._id, "note id increases by 1", 1)
+    try {
+      assert.isEqual()
+    } catch(e) {
+      updateErrorSection(e)
+    }
+}
+
+function getIdReturnsNoteId () {
+  var string = "This is test note"
+  var note = new Note(string)
+  var assert = new Assert(note.getId(), "getId returns id", note._id)
+    try {
+      assert.isEqual()
+    } catch(e) {
+      updateErrorSection(e)
+    }
 }
 
 noteCanBeInstantiated();
 noteTakesAStringAndAssignsItToTextProperty();
-noteGetTextMethodReturnsNoteTextProperty()
+noteGetTextMethodReturnsNoteTextProperty();
+noteHasAnId();
+noteIdIncreasesBy1();
+getIdReturnsNoteId();

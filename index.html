@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <script src="js/note-model.js"></script>
     <script src="js/note-list-model.js"></script>
     <script src="js/note-list-view-model.js"></script>
-    <!--
-    <script src="js/note-controller.js"></script>
-    <script src="test/singleNoteViewTest.js"></script> -->
+    <script src="js/single-note-view-model.js"></script>
   </head>
+
   <body>
     <a href="tests.html">Test Page</a>
 
-    <div id="noteToShow">
+    <div id="showNotes">
       <p>Note will appear here</p>
     </div>
-
 
     <div id="app">
       <p>Nothing yet...</p>
@@ -35,8 +34,6 @@
 
     <script src="js/note-controller.js"></script>
     <script src="js/interface.js"></script>
-    <!--<script src="test/noteControllerTest.js"></script> -->
-
 
     <script>
       setUpHashChangeMethod();
@@ -50,15 +47,12 @@
       };
 
       function getURL () {
-        // return window.location.hash.split("#")[1];
         return window.location.hash.slice(-3)
         .match( /\d+/g );
       }
 
       function adjustPage(noteId) {
-        noteId = parseInt(noteId)
-        var output = noteController.findNoteAndReturnHTMLEDcontent(noteId)
-        noteController.adjustPage(output)
+        noteController.findNoteAndUpdatePageWithHTMLEDcontent(noteId)
       }
 
     </script>
@@ -67,9 +61,10 @@
     window
     .addEventListener("submit", myAlert)
 
-    function myAlert(e) {
-      e.preventDefault()
-      console.log('form submitted', e.target.childNodes[1].value)
+    function myAlert(event) {
+      event.preventDefault()
+      noteList.createNote(event.target.childNodes[1].value)
+      noteController.getsHTMLAndInsertsHTML()
     }
     </script>
 
