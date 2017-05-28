@@ -20,12 +20,6 @@
       <p>Nothing yet...</p>
     </div>
 
-    <div id="links">
-      <ul>
-        <li><a href="http://localhost:8080">Home</a></li>
-      </ul>
-    </div>
-
     <form id="noteForm">
       <textarea id="textArea" onfocus="this.value='';">Insert Note Here</textarea>
       <input type="submit" value="Save Note">
@@ -58,12 +52,12 @@
     </script>
 
     <script>
-    window
-    .addEventListener("submit", myAlert)
+    window.addEventListener("submit", intercept)
 
-    function myAlert(event) {
+    function intercept(event) {
       event.preventDefault()
       noteList.createNote(event.target.childNodes[1].value)
+      noteController.getsHTMLAndInsertsHTML()
     }
     </script>
 

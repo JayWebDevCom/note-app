@@ -1,3 +1,14 @@
+function noteListViewCanBeInstantiated () {
+  var noteList = new NoteList();
+  var noteListView = new NoteListView(noteList);
+  var assert = new Assert(noteListView, "notelistView can be instantiated", NoteListView)
+  try {
+    assert.isInstanceOf()
+  } catch(e) {
+    updateErrorSection(e)
+  }
+}
+
 function noteListViewOutputNotesPrintsContentsOfASingleNoteInTheList () {
   var string1 = "This is note one"
   var noteList = new NoteList();
@@ -43,6 +54,7 @@ function noteListViewOutputNotesPrintsContentsOfZeroNotesInTheList () {
   }
 }
 
+noteListViewCanBeInstantiated ()
 noteListViewOutputNotesPrintsContentsOfASingleNoteInTheList()
 noteListViewOutputNotesPrintsContentsOfManyNotesInTheList();
 noteListViewOutputNotesPrintsContentsOfZeroNotesInTheList()
