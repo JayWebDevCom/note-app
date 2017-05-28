@@ -21,25 +21,25 @@ function Assert(subject, testName, expectation) {
 }
 
 Assert.prototype.isEqual = function () {
-  if (this._subject !== this._expectation) {
-    throw new Error("Failed - " + this._testName);
-  } else {
+  if (this._subject == this._expectation) {
     updateSection(this)
+  } else {
+    throw new Error("Failed - " + this._testName);
   }
 };
 
 Assert.prototype.isInstanceOf = function () {
-  if (!(this._subject instanceof this._expectation)) {
-    throw new Error("Failed - " + this._testName);
-  } else {
+  if ((this._subject instanceof this._expectation)) {
     updateSection(this)
+  } else {
+    throw new Error("Failed - " + this._testName);
   }
 };
 
 Assert.prototype.isTypeOf = function () {
-    if (!(typeof this._subject === this._expectation)) {
-      throw new Error("Failed - " + this._testName);
-    } else {
-      updateSection(this)
-    }
+  if ((typeof this._subject === this._expectation)) {
+    updateSection(this)
+  } else {
+    throw new Error("Failed - " + this._testName);
+  }
 };
