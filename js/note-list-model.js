@@ -14,6 +14,18 @@ NoteList.prototype.createNote = function (string) {
   this._notesModels.push(note)
 }
 
+
+NoteList.prototype.getNote = function (noteId) {
+  var noteToReturn
+   this.getAllNotes()
+  .forEach(function(note){
+  if (note.getId() == noteId){
+    noteToReturn = note
+  }
+  })
+  return noteToReturn
+}
+
 exports.NoteList = NoteList;
 
 })(this);

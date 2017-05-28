@@ -10,16 +10,17 @@ function noteControllerCanBeInstantiated() {
 }
 
 function noteControllerUpdatesThePageThroughgetsHTMLAndInsertsHTML() {
-  var noteList = new NoteList()
+  var fakeNoteList = {}
   var fakeNotesElement = {}
-  string = "Testing inserts HTML"
-  noteList.createNote(string)
-  var noteController = new NoteController(noteList, NoteListView, fakeNotesElement);
-  var noteid = noteList.getAllNotes()[0].getId()
-  var string = noteList.getAllNotes()[0].getText()
-  var returnString = "<ul><li><div><a href=\"#" + noteid + "\">" + string + "</a></div></li></ul>"
+  var fakestring = "returned string"
+  function FakeNotelistViewConstructor(){}
+  FakeNotelistViewConstructor.prototype.returnLinkedHTML = function () {
+    return fakestring
+  };
+  var noteController = new NoteController(fakeNoteList, FakeNotelistViewConstructor, fakeNotesElement);
   noteController.getsHTMLAndInsertsHTML()
-  var assert = new Assert(fakeNotesElement.innerHTML, "noteController updates the page with HTML content", returnString)
+  var assert = new Assert(fakeNotesElement.innerHTML,
+    "noteController updates the page with HTML content", fakestring)
   try {
     assert.isEqual()
   } catch(e) {
@@ -28,16 +29,30 @@ function noteControllerUpdatesThePageThroughgetsHTMLAndInsertsHTML() {
 }
 
 function noteControllerAdjustsPageContentWithGivenContent(){
-  var noteList = new NoteList()
+  var fakeNoteList = {}
+  var anotherFakeString = "This is another fake string"
+
+  var fakeNote = {}
+  fakeNote.getText = function() {
+    return anotherFakeString
+  }
+
+  fakeNoteList.getNote = function (){
+    return fakeNote
+  }
+
   var fakeNotesElement = {}
   var fakeNoteElement = {}
-  var noteController = new NoteController(noteList, NoteListView, fakeNotesElement, fakeNoteElement);
-  var string = "this is the adjustment"
-  noteList.createNote(string)
-  var note = noteList.getAllNotes()[0]
-  note._id = 999
+
+  function fakeSingleNoteViewConstructor (fakeNote) {}
+  fakeSingleNoteViewConstructor.prototype.returnHTML = function (){
+    return "<div>" + fakeNote.getText() + "</div>"
+  }
+
+  var noteController = new NoteController(fakeNoteList, NoteListView, fakeNotesElement, fakeNoteElement, fakeSingleNoteViewConstructor);
   noteController.findNoteAndUpdatePageWithHTMLEDcontent(999)
-  var returnString = "<div>" + string + "</div>"
+  var returnString = "<div>" + fakeNote.getText() + "</div>"
+
   var assert = new Assert(returnString, "noteController updates the page with HTML content after reveiving an id", fakeNoteElement.innerHTML)
   try {
     assert.isEqual()
