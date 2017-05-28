@@ -3,7 +3,6 @@ function canBeInstantiated () {
   var assert = new Assert(singleNoteView, "Single Note View Can Be Instantiated", SingleNoteView)
   try {
     assert.isInstanceOf()
-    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }
@@ -17,7 +16,6 @@ function returnsHTMLOfItsNote () {
   var assert = new Assert(singleNoteView.returnHTML(), "Single Note View returns HTML of it's note", toReturn)
   try {
     assert.isEqual()
-    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }

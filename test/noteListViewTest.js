@@ -8,7 +8,6 @@ function noteListViewOutputNotesPrintsContentsOfASingleNoteInTheList () {
   var assert = new Assert(noteListView.returnLinkedHTML(), "notelistView returns HTML of single note in it's noteList", returnString)
   try {
     assert.isEqual()
-    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }
@@ -27,7 +26,6 @@ function noteListViewOutputNotesPrintsContentsOfManyNotesInTheList () {
   var assert = new Assert(noteListView.returnLinkedHTML(), "notelistView returns HTML of many notes in it's it's noteList", returnString)
   try {
     assert.isEqual()
-    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }
@@ -40,7 +38,6 @@ function noteListViewOutputNotesPrintsContentsOfZeroNotesInTheList () {
   var assert = new Assert(noteListView.returnLinkedHTML(), "notelistView returns HTML of empty noteList", returnString)
   try {
     assert.isEqual()
-    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }

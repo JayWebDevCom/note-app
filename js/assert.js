@@ -24,7 +24,7 @@ Assert.prototype.isEqual = function () {
   if (this._subject !== this._expectation) {
     throw new Error("Failed - " + this._testName);
   } else {
-    console.log("Passed - " + this._testName);
+    updateSection(this)
   }
 };
 
@@ -32,7 +32,7 @@ Assert.prototype.isInstanceOf = function () {
   if (!(this._subject instanceof this._expectation)) {
     throw new Error("Failed - " + this._testName);
   } else {
-    console.log("Passed - " + this._testName);
+    updateSection(this)
   }
 };
 
@@ -40,6 +40,6 @@ Assert.prototype.isTypeOf = function () {
     if (!(typeof this._subject === this._expectation)) {
       throw new Error("Failed - " + this._testName);
     } else {
-      console.log("Passed - " + this._testName);
+      updateSection(this)
     }
 };
