@@ -3,7 +3,7 @@ function noteControllerCanBeInstantiated() {
   var noteController = new NoteController(noteList);
   var assert = new Assert(noteController, "noteController can be instantiated", NoteController)
   try {
-    assert.isTypeOf()
+    assert.isInstanceOf()
     updateSection(assert)
   } catch(e) {
     updateErrorSection(e)

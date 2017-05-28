@@ -2,7 +2,7 @@ function canBeInstantiated () {
   var singleNoteView = new SingleNoteView()
   var assert = new Assert(singleNoteView, "Single Note View Can Be Instantiated", SingleNoteView)
   try {
-    assert.isTypeOf()
+    assert.isInstanceOf()
     updateSection(assert)
   } catch(e) {
     updateErrorSection(e)

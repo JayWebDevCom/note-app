@@ -2,7 +2,7 @@ function noteListCanBeInstantiated() {
   var noteList = new NoteList()
   var assert = new Assert(noteList, "NoteList Has Can Be Instantiated", NoteList)
   try {
-    assert.isTypeOf()
+    assert.isInstanceOf()
     updateSection(assert)
   } catch (e) {
     updateErrorSection(e)
@@ -13,7 +13,7 @@ function noteListHasAnArray() {
   var noteList = new NoteList()
   var assert = new Assert(noteList._notesModels, "NoteList Has An Empty Array", Array)
   try {
-    assert.isTypeOf()
+    assert.isInstanceOf()
     updateSection(assert)
   } catch (e) {
     updateErrorSection(e)
@@ -37,7 +37,7 @@ function createNoteCreatesAndStoresANote() {
   noteList.createNote(string)
   var assert = new Assert(noteList.getAllNotes()[0], "notelist creates and stores a note", Note)
   try {
-    assert.isTypeOf()
+    assert.isInstanceOf()
     updateSection(assert)
   } catch (e) {
     updateErrorSection(e)

@@ -3,7 +3,8 @@ function noteCanBeInstantiated () {
   var note = new Note(string)
   var assert = new Assert(note, "Note Can be instantiated", Note)
   try {
-    assert.isTypeOf()
+    assert.isInstanceOf()
+    updateSection(assert)
   } catch(e) {
     updateErrorSection(e)
   }
@@ -38,7 +39,7 @@ function noteHasAnId() {
   var note = new Note(string)
   var assert = new Assert(note._id, "note has an integer id", "number")
     try {
-      assert.isTypeOf2()
+      assert.isTypeOf()
       updateSection(assert)
     } catch(e) {
       updateErrorSection(e)

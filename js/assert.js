@@ -20,14 +20,6 @@ function Assert(subject, testName, expectation) {
   this._expectation = expectation;
 }
 
-Assert.prototype.isTrue = function () {
-  if (this._subject !== true) {
-    throw new Error("Failed - " + this._testName);
-  } else {
-    console.log("Passed - " + this._testName);
-  }
-};
-
 Assert.prototype.isEqual = function () {
   if (this._subject !== this._expectation) {
     throw new Error("Failed - " + this._testName);
@@ -36,7 +28,7 @@ Assert.prototype.isEqual = function () {
   }
 };
 
-Assert.prototype.isTypeOf = function () {
+Assert.prototype.isInstanceOf = function () {
   if (!(this._subject instanceof this._expectation)) {
     throw new Error("Failed - " + this._testName);
   } else {
@@ -44,8 +36,8 @@ Assert.prototype.isTypeOf = function () {
   }
 };
 
-Assert.prototype.isTypeOf2 = function () {
-    if (!((typeof this._subject) === this._expectation)) {
+Assert.prototype.isTypeOf = function () {
+    if (!(typeof this._subject === this._expectation)) {
       throw new Error("Failed - " + this._testName);
     } else {
       console.log("Passed - " + this._testName);
