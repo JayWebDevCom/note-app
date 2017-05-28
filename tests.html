@@ -10,6 +10,7 @@
     <a href="index.html">Note Page</a>
 
     <ul id="testOutput"></ul>
+    <p id="testCount"></p>
 
     <script src="js/assert.js"></script>
 
@@ -28,5 +29,9 @@
     <script src="js/note-controller.js"></script>
     <script src="test/noteControllerTest.js"></script>
 
+    <script>
+    var count = document.getElementById("testOutput").childElementCount;
+    document.getElementById("testCount").innerHTML = count + " tests logged." 
+    </script>
   </body>
 </html>
