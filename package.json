@@ -1,25 +1,26 @@
 {
-  "name": "note-app",
+  "name": "learning-mean",
   "version": "1.0.0",
-  "description": "an object oriented note taking, collecting and viewing app",
-  "main": "assert.js",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JayWebDevCom/note-app.git"
+    "url": "git+https://github.com/JayWebDevCom/mean-stack.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JayWebDevCom/note-app/issues"
+    "url": "https://github.com/JayWebDevCom/mean-stack/issues"
   },
-  "homepage": "https://github.com/JayWebDevCom/note-app#readme",
-  "dependencies": {
-    "http-server": "^0.10.0"
-  },
-  "devDependencies": {
-    "http-server": "^0.10.0"
-  }
+  "homepage": "https://github.com/JayWebDevCom/mean-stack#readme"
 }
