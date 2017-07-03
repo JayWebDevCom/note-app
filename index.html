@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    
+
     <a href="tests.html">Test Page</a>
 
     <div id="showNotes">
@@ -31,36 +31,34 @@
     <script src="js/interface.js"></script>
 
     <script>
-      setUpHashChangeMethod();
+    setUpHashChangeMethod();
 
-      function setUpHashChangeMethod() {
-        window.addEventListener("hashchange", showNoteUrl)
-      };
+function setUpHashChangeMethod() {
+  window.addEventListener("hashchange", showNoteUrl);
+}
 
-      function showNoteUrl() {
-        adjustPage(getURL(window.location))
-      };
+function showNoteUrl() {
+  adjustPage(getURL(window.location));
+}
 
-      function getURL () {
-        return window.location.hash.slice(-3)
-        .match( /\d+/g );
-      }
+function getURL() {
+  return window.location.hash.slice(-3).match(/\d+/g);
+}
 
-      function adjustPage(noteId) {
-        noteController.findNoteAndUpdatePageWithHTMLEDcontent(noteId)
-      }
-
-    </script>
+function adjustPage(noteId) {
+  noteController.findNoteAndUpdatePageWithHTMLEDcontent(noteId);
+}
+</script>
 
     <script>
-    window.addEventListener("submit", intercept)
+    window.addEventListener("submit", intercept);
 
-    function intercept(event) {
-      event.preventDefault()
-      noteList.createNote(event.target.childNodes[1].value)
-      noteController.getsHTMLAndInsertsHTML()
-    }
-    </script>
+function intercept(event) {
+  event.preventDefault();
+  noteList.createNote(event.target.childNodes[1].value);
+  noteController.getsHTMLAndInsertsHTML();
+}
+</script>
 
   </body>
 </html>
